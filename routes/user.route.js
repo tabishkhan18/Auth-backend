@@ -3,7 +3,6 @@ import { body } from 'express-validator'
 
 const router = Router()
 
-
 router.post(
     '/login',
     [
@@ -14,4 +13,4 @@ router.post(
     (req, res)=> {
         res.send("Login Page")
     })
-    
+// testing...
