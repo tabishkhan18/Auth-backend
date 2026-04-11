@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config({ path: '.env' })
 
 import express from "express"
-import { connectDB } from "./db/conn.js"
+import { connectDB } from "./app/db/conn.js"
 import cookiesParser from 'cookie-parser'
 
 const PORT = process.env.PORT || 5000
@@ -20,7 +20,7 @@ app.get("/", (req, res)=>{
     res.send("Server is up... :)")
 })
 
-import userRoutes from './routes/user.route.js'
+import userRoutes from './app/routes/user.route.js'
 app.use('/user', userRoutes)
 
 app.listen(PORT, (req, res)=>{
