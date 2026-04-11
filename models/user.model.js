@@ -9,6 +9,7 @@ const userSchema = new Schema({
         required: true,
         trim: true,
         unique: true,
+        lowercase: true,
     },
     email: {
         type: String,
@@ -40,7 +41,7 @@ userSchema.methods.generateAuthToken = async function (){
     return token;
 }
 
-userSchema.method.hashPassword = async function(password){
+userSchema.statics.hashPassword = async function(password){
     return await bcyrpt.hash(password, 10)
 }
 
